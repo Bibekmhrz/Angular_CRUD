@@ -1,0 +1,26 @@
+<div class="flex flex-col  items-center mt-16 mr-16 bg-white  border border-black">
+    <table class=" ">
+        <thead class="">
+            <th scope="col" class="w-1/4 whitespace-nowrap border border-black">Name</th>
+            <th scope="col" class="w-1/4 whitespace-nowrap border border-black"> Email</th>
+            <th scope="col" class="w-1/4 whitespace-nowrap border border-black"> Country</th>
+            <th scope="col" class="w-1/4 whitespace-nowrap border border-black"> Action </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of mydata">
+
+                <td class="w-1/4 text-center whitespace-nowrap border border-black"> {{m.name}}</td>
+                <td class="w-1/4 whitespace-nowrap border border-black"> {{m.email}}</td>
+                <td class="w-1/4 whitespace-nowrap border border-black"> {{m.country}}</td>
+                <div class="flex flex-row justify-center ">
+                    <td>
+                        <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l basis-1/4 hover:text-green-700" routerLink="/" [queryParams]="{ id:m._id}">Edit</a>
+                    </td>
+                    <td>
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r basis-1/4 hover:text-red-700" (click)="delete(m._id)">Delete</button>
+                    </td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+</div>
